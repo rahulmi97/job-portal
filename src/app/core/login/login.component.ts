@@ -37,21 +37,17 @@ export class LoginComponent implements OnInit {
       this.loginFormGroup.updateValueAndValidity();
       return;
     }
-    console.log(this.loginFormGroup);
     const apiArgs: IHitApi = {
       url: ApiUrls.LOGIN_API_ENDPOINT,
       input: this.loginFormGroup.value,
       requestType: RequestType.POST,
       responseFn: (logInData: ILoginResponse) => {
-        console.log(logInData);
-        // this.showLoader=false;
         this.sessionSevice.login(logInData);
         this.showErrorMsg=false
       },
       errorFn: (err) => {
         this.showLoader = false;
         this.showErrorMsg=true
-        console.log(err);
       },
     };
     this.hitApiService.hitApi(apiArgs);

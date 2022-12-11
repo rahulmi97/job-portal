@@ -52,7 +52,6 @@ export class HomeComponent implements OnInit {
     this.hitApiService.hitApi(apiArgs);
   }
   changePage(pageNumber?) {
-    console.log(pageNumber);
 
     if (pageNumber < 1 || pageNumber > 20) {
       return;
@@ -70,7 +69,6 @@ export class HomeComponent implements OnInit {
         // callbackFn();
       },
       errorFn: (err) => {
-        console.log(err);
       },
       auth: AuthorizationType.BEARER_TOKEN,
     };

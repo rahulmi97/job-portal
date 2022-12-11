@@ -14,7 +14,6 @@ export class AboutComponent implements OnInit {
   constructor(private globalDataService: GlobalDataService) {}
 
   ngOnInit(): void {
-    console.log(this.cardData, ':::::::::::::');
   }
   goToLogingPage() {
     this.globalDataService.showLoginForm.next(true);

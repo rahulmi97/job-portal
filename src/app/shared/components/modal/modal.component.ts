@@ -13,7 +13,6 @@ export class ModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) data,
     public modalService: ModalService
   ) {
-    console.log(data, '++++++++++++++++++++++');
     this.applicants = data;
   }
 

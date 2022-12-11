@@ -29,7 +29,6 @@ export class GlobalDataService {
         callbackFn();
       },
       errorFn: (err) => {
-        console.log(err);
       },
       auth: AuthorizationType.BEARER_TOKEN,
     };

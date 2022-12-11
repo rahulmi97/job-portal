@@ -12,10 +12,6 @@ export class ModalService {
     this.modalRef = this.dialog.open(ModalComponent, {
       data: data,
     });
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
   }
   closeModal() {
     this.modalRef.close();
