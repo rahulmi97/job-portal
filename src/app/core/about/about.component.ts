@@ -13,8 +13,7 @@ export class AboutComponent implements OnInit {
   imagesUrl = companyImages;
   constructor(private globalDataService: GlobalDataService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   goToLogingPage() {
     this.globalDataService.showLoginForm.next(true);
   }

@@ -12,12 +12,12 @@
   height: 80%
   width: 100%
   overflow: auto
-  background: conic-gradient(from 0.50turn at 55% 22%, #EDF6FF 0deg 90deg, #303F60 90deg 270deg, #EDF6FF 270deg 0deg)
+  background: conic-gradient(from 0.50turn at 55% 22%, var(--secondaryColor) 0deg 90deg, var(--primaryColor) 90deg 270deg, var(--secondaryColor) 270deg 0deg)
   .cards
     width: 320px
     padding: 20px
     display: flex
-    background: white
+    background: var(--commonBgColor)
     border-radius: 5px
     margin: 10px 10px 10px 0
     max-height: 230px
@@ -27,7 +27,7 @@
       width: 120px
       font-weight: 800
       font-size: 1rem
-      color: #303F60
+      color: var(--primaryColor)
       display: -webkit-box
       -webkit-line-clamp: 2
       -webkit-box-orient: vertical
@@ -38,7 +38,7 @@
       -webkit-box-orient: vertical
       overflow: hidden
       flex: 1
-      color: #303F60
+      color: var(--primaryColor)
       margin-bottom: 5px
     .extra-details
       display: flex
@@ -53,20 +53,17 @@
       .btn
         button
           background-color: #43AFFF33
-          color: #303F60
+          color: var(--primaryColor)
 
 .pages
   display: flex
   justify-content: center
   font-size: 0.85rem
   align-items: center
-  // color: var(--pagesColor)
   font-weight: 600
   height: 40px
-
   &.bottom-button
       padding: 20px
-
   .back-page, .next-page
       font-weight: bold
       height: 22px
@@ -76,19 +73,6 @@
       justify-content: center
       border: 0
       border-radius: 100%
-      transition: visibility 0.1s ease-in-out
-
-  // .back-page i
-  //     font-size: var(--fs200)
-  //     color: var(--navigationIconTextColor)
-  //     margin-left: -1px
-  //     margin-top: 1px
-
-  // .next-page i
-  //     font-size: var(--fs200)
-  //     color: var(--navigationIconTextColor)
-  //     margin-left: 1px
-  //     margin-top: 1px
 
   .current-page
       display: flex
@@ -100,29 +84,21 @@
           width: 28px
           text-align: center
           outline: 0
-          border: 1px solid var(--pagesColor)
+          border: 1px solid var(--commonBorderColor)
           border-radius: 20%
-          font-size: var(--fs400)
-          color: var(--defaultTextColor)
+          font-size: 0.85rem
+          color: var(--primaryColor)
           font-weight: 600
 
-      .separator
-          margin: 0 8px
-          font-size: var(--fs400)
-
-      .totalPages
-          color: var(--pagesColor)
-          font-size: var(--fs400)
-
 .text
-  color: #FFFFFF
+  color: var(--secondaryTextColor)
   width: 86%
   margin: 10px auto
 button::ng-deep
-  background-color: #43AFFF
+  background-color: var(--buttonBgColor)
   .mat-button-wrapper
     display: flex
     mat-spinner
       margin: auto 5px
     svg circle
-      stroke: #303F60
+      stroke: var(--primaryColor)

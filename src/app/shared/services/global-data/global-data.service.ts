@@ -24,12 +24,10 @@ export class GlobalDataService {
       input: {},
       requestType: RequestType.GET,
       responseFn: (candidatesData: any[]) => {
-        // this.sessionSevice.login(logInData);
         this.userDataCacheService.candidates = candidatesData['data'];
         callbackFn();
       },
-      errorFn: (err) => {
-      },
+      errorFn: (err) => {},
       auth: AuthorizationType.BEARER_TOKEN,
     };
     this.hitApiService.hitApi(apiArgs);

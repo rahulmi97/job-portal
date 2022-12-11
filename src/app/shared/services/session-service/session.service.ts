@@ -24,6 +24,7 @@ export class SessionService {
   logout() {
     localStorage.clear();
     this.sessionActive.next(false);
+    this.globalDataService.showLoginForm.next(false);
   }
   verifySession() {
     if (this.userDataCache.bearerToken) {

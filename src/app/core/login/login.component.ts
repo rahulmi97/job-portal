@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
   showLoader: boolean = false;
-  showErrorMsg: boolean=false;
+  showErrorMsg: boolean = false;
   constructor(
     private hitApiService: HitApiService,
     private sessionSevice: SessionService
@@ -26,30 +26,45 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
   hitLoginApi() {
-
     if (this.showLoader) {
       return;
     }
-    this.showErrorMsg=false;
-    this.showLoader = true;
     this.loginFormGroup.markAllAsTouched();
     if (this.loginFormGroup.invalid) {
       this.loginFormGroup.updateValueAndValidity();
       return;
     }
+    this.showErrorMsg = false;
+    this.showLoader = true;
     const apiArgs: IHitApi = {
       url: ApiUrls.LOGIN_API_ENDPOINT,
       input: this.loginFormGroup.value,
       requestType: RequestType.POST,
       responseFn: (logInData: ILoginResponse) => {
         this.sessionSevice.login(logInData);
-        this.showErrorMsg=false
+        this.showErrorMsg = false;
       },
       errorFn: (err) => {
         this.showLoader = false;
-        this.showErrorMsg=true
+        this.showErrorMsg = true;
       },
     };
     this.hitApiService.hitApi(apiArgs);
+  }
+  getEmailValidator(): string {
+    if (!this.loginFormGroup) {
+      return;
+    }
+    console.log(this.loginFormGroup.get('email').errors);
+    const error = this.loginFormGroup.get('email').errors;
+    let errorMsg: string = '';
+    Object.keys(error).forEach((err) => {
+      if (err === 'required' && error[err]) {
+        errorMsg = 'Email is required.';
+      } else if (err === 'email' && error[err]) {
+        errorMsg = 'Email is invalid.';
+      }
+    });
+    return errorMsg;
   }
 }

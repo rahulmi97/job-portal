@@ -14,7 +14,6 @@ import { AuthorizationType } from 'src/app/shared/enums/AuthorizationType';
 })
 export class HomeComponent implements OnInit {
   jobsListing: any[];
-  // showLoader: boolean=false;
   currentPage: number = 1;
   showLoader: Map<string, boolean> = new Map<string, boolean>();
 
@@ -49,7 +48,6 @@ export class HomeComponent implements OnInit {
     this.hitApiService.hitApi(apiArgs);
   }
   changePage(pageNumber?) {
-
     if (pageNumber < 1 || pageNumber > 20) {
       return;
     }
@@ -62,8 +60,7 @@ export class HomeComponent implements OnInit {
       responseFn: (candidatesData: any[]) => {
         this.jobsListing = candidatesData['data'];
       },
-      errorFn: (err) => {
-      },
+      errorFn: (err) => {},
       auth: AuthorizationType.BEARER_TOKEN,
     };
     this.hitApiService.hitApi(apiArgs);
