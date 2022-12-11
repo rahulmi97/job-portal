@@ -17,30 +17,30 @@ export const cardData = [
 ];
 export const companyImages = [
   {
-    url: 'src/assets/solaytic/solaytic.png',
+    url: 'assets/solaytic/solaytic.png',
   },
   {
-    url: 'src/assets/kanba (1)/kanba.png',
+    url: 'assets/kanba (1)/kanba.png',
   },
   {
-    url: 'src/assets/lighting/lighting.png',
+    url: 'assets/lighting/lighting.png',
   },
   {
-    url: 'src/assets/ztos/ztos.png',
+    url: 'assets/ztos/ztos.png',
   },
   {
-    url: 'src/assets/kanba (1)/kanba.png',
+    url: 'assets/kanba (1)/kanba.png',
   },
   {
-    url: 'src/assets/goldline/goldline.png',
+    url: 'assets/goldline/goldline.png',
   },
   {
-    url: 'src/assets/ideaa/ideaa.png',
+    url: 'assets/ideaa/ideaa.png',
   },
   {
-    url: 'src/assets/liva/liva.png',
+    url: 'assets/liva/liva.png',
   },
   {
-    url: 'src/assets/velocity-9/velocity-9.png',
+    url: 'assets/velocity-9/velocity-9.png',
   },
 ];
