@@ -32,18 +32,15 @@ export class HomeComponent implements OnInit {
       return;
     }
     this.showLoader.set(jobsId, true);
-    // this.showLoader=true;
     const apiArgs: IHitApi = {
       url: ApiUrls.GET_APPLICANT_DATA_API,
       input: {},
       requestType: RequestType.GET,
       responseFn: (candidatesData: any[]) => {
-        // this.showLoader=false;
         this.showLoader.set(jobsId, false);
         this.modalService.openDialog(candidatesData);
       },
       errorFn: (err) => {
-        // this.showLoader=false;
         this.showLoader.set(jobsId, false);
       },
       auth: AuthorizationType.BEARER_TOKEN,
@@ -63,10 +60,7 @@ export class HomeComponent implements OnInit {
       input: {},
       requestType: RequestType.GET,
       responseFn: (candidatesData: any[]) => {
-        // this.sessionSevice.login(logInData);
-        // this.userDataCacheService.candidates=candidatesData['data'];
         this.jobsListing = candidatesData['data'];
-        // callbackFn();
       },
       errorFn: (err) => {
       },
