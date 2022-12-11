@@ -1,0 +1,33 @@
+<div class="page-container">
+
+  <div class="login-container">
+    <span class="text">Login</span>
+    <form action="" [formGroup]="loginFormGroup" (ngSubmit)="hitLoginApi()">
+      <div class="email-conrainer">
+        <mat-form-field appearance="outline" floatLabel="always">
+          <mat-label>Enter your email</mat-label>
+          <input matInput type="email" placeholder="pat@example.com" [formControlName]="'email'">
+          <mat-error *ngIf="loginFormGroup.get('email').invalid">{{'email is invalid'}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="password-conrainer">
+        <mat-form-field appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input matInput type="password" placeholder="pat@example.com" [formControlName]="'password'">
+          <mat-error *ngIf="loginFormGroup.get('email').invalid">{{'Password is required'}}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+    <span class="error-msg" *ngIf="showErrorMsg">Invalid email id and password</span>
+    <button
+        type="button"
+        mat-raised-button
+        (click)="$event.stopPropagation();hitLoginApi()"
+    >
+        <span class="button-name">
+            {{ 'Login' }}
+        </span>
+        <mat-spinner *ngIf="showLoader" [diameter]="16"></mat-spinner>
+    </button>
+  </div>
+</div>

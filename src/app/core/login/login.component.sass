@@ -1,0 +1,46 @@
+.page-container
+    height: 90%
+    width: 100%
+    // height: 100vh
+    // width: 100vw
+    // background: conic-gradient(from 0.50turn at 55% 45%, #EDF6FF 0deg 90deg, #303F60 90deg 270deg, #EDF6FF 270deg 0deg)
+    .title
+      height: 50px
+      border-bottom: 1px solid #4D618E
+      width: 90%
+      margin: 0px auto
+      padding: 20px 0
+      color: white
+      font-weight: bold
+      font-family: system-ui
+      .job-text
+        color: #43AFFF
+
+    .login-container
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      height: 50%
+      width: 40%
+      background: white
+      margin: 60px auto 20px
+      border-radius: 5px
+      form
+        width: 80%
+
+      button::ng-deep
+        background-color: #43AFFF
+        .mat-button-wrapper
+          display: flex
+          mat-spinner
+            margin: auto 5px
+          svg circle
+            stroke: var(--commonBgColor)
+// input
+//   color: black
+mat-label
+  color: #303F60
+.error-msg
+  color: red
+  font-size: 0.85rem

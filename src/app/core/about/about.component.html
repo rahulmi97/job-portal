@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="section1 just-cont">
+    <div class="description">
+      <div class="txt">Welcome To</div>
+      <img src="../../../assets/MyJobs/MyJobs@2x.png" alt="img" />
+      <div class="btn">
+        <button type="button" mat-raised-button (click)="goToLogingPage()">
+          Get Started
+
+          <!-- <mat-spinner
+            class="light-theme"
+            [color]="'white'"
+            [diameter]="16"
+            *ngIf="buttonGenInput.showLoader && buttonGenInput.loader"
+        >
+        </mat-spinner> -->
+        </button>
+      </div>
+    </div>
+    <div class="logo-img">
+      <img
+        src="../../../assets/Screenshot 2020-09-21 at 2.06.52 PM/Screenshot 2020-09-21 at 2.06.52 PM@2x.png"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="section2 just-cont">
+    <div class="text">Why Us</div>
+    <div class="card-container">
+      <div class="card" *ngFor="let card of cardData">
+        <div class="card-title">{{card.title}}</div>
+        <div class="card-description">{{card.description}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="section3 just-cont">
+    <div class="text">Companies Who Trust Us</div>
+    <div class="img-container">
+      <div class="images" *ngFor="let imgData of imagesUrl">
+        <img [src]="imgData.url" alt="">
+      </div>
+    </div>
+  </div>
+</div>

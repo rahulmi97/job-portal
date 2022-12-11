@@ -1,0 +1,86 @@
+
+<div class="text">Jobs Posted By You</div>
+ <div class="cards-container">
+
+  <div class="cards" *ngFor="let jobs of jobsListing">
+    <div class="card-title">{{ jobs.title }}</div>
+    <div class="card-description">{{ jobs.description }}</div>
+    <div class="extra-details">
+      <div class="location">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="17"
+          viewBox="0 0 12 17"
+        >
+          <path
+            id="Icon_material-location-on"
+            data-name="Icon material-location-on"
+            d="M12.5,3a5.126,5.126,0,0,0-5,5.25c0,3.937,5,9.75,5,9.75s5-5.813,5-9.75A5.126,5.126,0,0,0,12.5,3Zm0,7.125A1.833,1.833,0,0,1,10.714,8.25a1.788,1.788,0,1,1,3.571,0A1.833,1.833,0,0,1,12.5,10.125Z"
+            transform="translate(-6.5 -2)"
+            fill="none"
+            stroke="#43afff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+        <span>{{ jobs.location }}</span>
+      </div>
+      <div class="btn">
+        <button
+          type="button"
+          mat-raised-button
+          (click)="getApplicantsDetails(jobs.id)"
+        >
+          View Application
+
+          <mat-spinner [color]="'white'" [diameter]="16" *ngIf="showLoader.has(jobs.id)&&showLoader.get(jobs.id)">
+          </mat-spinner>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="pages">
+  <!-- <button
+    [style.visibility]="currentPage === 1 ? 'hidden' : 'visible'"
+    class="clickable back-page"
+    (click)="changePage(currentPage - 1)"
+  >
+    <i class="fas fa-chevron-left"></i>
+  </button> -->
+  <div class="clickable back-page" (click)="changePage(currentPage-1)">
+    <svg xmlns="http://www.w3.org/2000/svg" id="Prev" width="30" height="30" viewBox="0 0 30 30">
+      <g id="Rectangle_205" data-name="Rectangle 205" fill="none" stroke="#303f60" stroke-width="1" opacity="0.5">
+        <rect width="30" height="30" rx="5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="29" height="29" rx="4.5" fill="none"/>
+      </g>
+      <path id="Icon_awesome-caret-down" data-name="Icon awesome-caret-down" d="M1.484,13.5h8.868a.65.65,0,0,1,.486,1.116L6.406,18.826a.717.717,0,0,1-.975,0L1,14.616A.65.65,0,0,1,1.484,13.5Z" transform="translate(31.018 9.206) rotate(90)" fill="#7a839a" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="current-page">
+    <input
+      #field
+      type="text"
+      [value]="currentPage"
+      (keyup.enter)="changePage($event.target.value)"
+      [min]="1"
+    />
+  </div>
+  <div class="clickable next-page" (click)="changePage(currentPage+1)">
+    <svg xmlns="http://www.w3.org/2000/svg" id="Nex" width="30" height="30" viewBox="0 0 30 30">
+      <g id="Rectangle_205" data-name="Rectangle 205" fill="none" stroke="#303f60" stroke-width="1" opacity="0.5">
+        <rect width="30" height="30" rx="5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="29" height="29" rx="4.5" fill="none"/>
+      </g>
+      <path id="Icon_awesome-caret-down" data-name="Icon awesome-caret-down" d="M1.484,13.5h8.868a.65.65,0,0,1,.486,1.116L6.406,18.826a.717.717,0,0,1-.975,0L1,14.616A.65.65,0,0,1,1.484,13.5Z" transform="translate(-0.5 21.041) rotate(-90)" fill="#7a839a"/>
+    </svg>
+  </div>
+  <!-- <button class="clickable next-page" (click)="changePage(currentPage + 1)">
+    <i class="fas fa-chevron-right"></i>
+  </button> -->
+</div>
+
+

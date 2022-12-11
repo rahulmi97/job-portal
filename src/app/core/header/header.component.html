@@ -1,0 +1,30 @@
+<div class="header-container">
+  <div class="logo">
+    <img src="../../../assets/MyJobs/MyJobs.png" alt="img" />
+  </div>
+  <div
+    [matMenuTriggerFor]="userInfoMenu"
+    class="profile clickable"
+    [matTooltip]="'Logout'"
+    *ngIf="sessionService.sessionActive | async"
+  >
+    {{userDataCache.userName.charAt(0).toUpperCase()}}
+  </div>
+  <mat-menu #userInfoMenu="matMenu">
+    <div class="user-info-container">
+      <div class="name">
+        {{ userDataCache.userName }}
+      </div>
+      <div class="action-buttons">
+        <button
+          mat-button
+          class="clickable btn-primary-stroked"
+          color="primary"
+          (click)="sessionService.logout()"
+        >
+          <span><i class="fas fa-power-off"></i> <span> Logout</span></span>
+        </button>
+      </div>
+    </div>
+  </mat-menu>
+</div>

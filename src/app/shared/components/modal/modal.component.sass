@@ -1,0 +1,50 @@
+.heading
+  display: flex
+  justify-content: space-between
+  border-bottom: 2px solid #303F60
+  height: 40px
+.profile
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-right: 5px
+  border-radius: 50%
+  height: 30px
+  width: 30px
+  background-color: #D9EFFF
+mat-dialog-content
+  min-width: 30vw
+  .application-container
+    display: flex
+    flex-wrap: wrap
+    max-width: 450px
+    background-color: #557DA526
+    border-radius: 10px
+    .card
+      height: 120px
+      width: 200px
+      display: flex
+      flex-direction: column
+      margin: 10px
+      background: white
+      border-radius: 10px
+      padding: 15px
+      .applicants-details
+        display: flex
+        flex: 1
+        .applicant-name-with-email
+          width: 120px
+          .name
+            font-size: 0.85rem
+            font-weight: 800
+          .email
+            overflow: hidden
+            text-overflow: ellipsis
+
+      .skills-container
+        font-size: 0.65rem
+        .s-text
+          font-weight: 600
+.text-color
+  color: #303F60
+
